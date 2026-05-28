@@ -23,12 +23,13 @@ function AdBanner() {
   ];
 
   return (
-    <section className="w-full px-2 sm:px-4 md:px-6 py-4">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <section className="w-full sm:px-4 pb-4 pt-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {banners.map((banner, index) => (
           <div
             key={index}
             className={`
+              z-1
               bg-gradient-to-r ${banner.gradient}
               rounded-xl
               p-4 sm:p-5
@@ -39,9 +40,14 @@ function AdBanner() {
               transition-all
               duration-300
               flex
+              items-center
+              md:items-start
+              sm:flex-row
+              md:flex-col
               flex-col
               justify-between
               min-h-[150px]
+              md:flex-nowrap
             `}
           >
             <div>

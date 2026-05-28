@@ -20,12 +20,13 @@ function ProductCard({
       className="
         bg-white
         border
-        border-gray-200
+        border-gray-300
         rounded-md
         overflow-hidden
         transition-all
         duration-200
-        hover:shadow-md
+        shadow-md
+        hover:shadow-lg
         hover:-translate-y-1
       "
     >

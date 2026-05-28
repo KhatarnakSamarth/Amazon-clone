@@ -1,15 +1,13 @@
 import React from 'react'
 import Navbar from './components/Navbar'
-import HeroSlider from './components/HeroSlider';
+import Hero from './components/Hero';
 import ProductCard from './components/ProductCard';
 import Footer from './components/Footer';
 import AdBanner from './components/AdBanner';
+import BigCard from './components/BigCard'
+import ProductCarouselCard from "./components/ProductCarouselCard";
 
 const App = () => {
-  const handleAddToCart = (product) => {
-    console.log("Added:", product);
-  };
-
   const products = [
     {
       id: 1,
@@ -86,115 +84,120 @@ const App = () => {
   ];
 
 
+  
+const carouselData = [
+  {
+    img: "https://m.media-amazon.com/images/I/41K-sS0Wb7L._AC_SY200_.jpg",
+    label: "Up to 80% off",
+  },
+  {
+    img: "https://m.media-amazon.com/images/I/41LzY1LzK7L._AC_SY200_.jpg",
+    label: "Up to 50% off",
+  },
+  {
+    img: "https://m.media-amazon.com/images/I/31gK-G1dG4L._AC_SY200_.jpg",
+    label: "Up to 40% off",
+  },
+  {
+    img: "https://m.media-amazon.com/images/I/41-y17eK8rL._AC_SY200_.jpg",
+    label: "Limited deal",
+  },
+  {
+    img: "https://m.media-amazon.com/images/I/51AALQp+3DL._AC_SY200_.jpg",
+    label: "Up to 60% off",
+  },
+  {
+    img: "https://m.media-amazon.com/images/I/41V1fC9S+8L._AC_SY200_.jpg",
+    label: "Great Indian Festival",
+  },
+  {
+    img: "https://m.media-amazon.com/images/I/41uGjvXbeBL._AC_SY200_.jpg",
+    label: "Up to 70% off",
+  },
+  {
+    img: "https://m.media-amazon.com/images/I/41j-G5G+T3L._AC_SY200_.jpg",
+    label: "Mega Deal",
+  },
+];
 
 
   return (
     <>
       <Navbar />
-      <HeroSlider />
+      <main className='px-4 md:px-6 lg:px-8 relative bg-gray-200'>
+        <Hero />
 
-      
+        <section className='flex gap-4 flex-col sm:flex-row flex-wrap md:flex-nowrap w-full'>
+          <BigCard title="Great Deals" name="Bue Cups" image="../assets/logo.png" />
+          <BigCard title="Great Deals" name="Bue Cups" image="../assets/logo.png" />
+          <BigCard title="Great Deals" name="Bue Cups" image="../assets/logo.png" />
+          <BigCard title="Great Deals" name="Bue Cups" image="../assets/logo.png" />
+        </section>
 
+        <AdBanner />
 
-      <div className="bg-[#e3e6e6] px-2 sm:px-3 md:px-4 lg:px-5 z-2 relative md:-mt-20">
-        <div className="bg-white p-3 sm:p-4 md:p-5 rounded">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-3">
-            <h2 className="text-sm sm:text-base md:text-lg font-bold">
-              Deals inspired by your browsing history
+        <section className='my-5 p-4 bg-white rounded-xl flex gap-4 sm:flex-row flex-nowrap w-full overflow-y-hidden overflow-x-scroll'>
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className="shrink-0 w-35 sm:w-40 md:w-45 lg:w-50 xl:w-55"
+            >
+              <ProductCard
+                {...product}
+              // onAddToCart={handleAddToCart}
+              />
+            </div>
+          ))}
+        </section>
+
+        <section className='flex gap-4 flex-col sm:flex-row flex-wrap md:flex-nowrap w-full'>
+          <BigCard title="Great Deals" name="Bue Cups" image="../assets/logo.png" />
+          <BigCard title="Great Deals" name="Bue Cups" image="../assets/logo.png" />
+          <BigCard title="Great Deals" name="Bue Cups" image="../assets/logo.png" />
+          <BigCard title="Great Deals" name="Bue Cups" image="../assets/logo.png" />
+        </section>
+
+        <section className='my-5 p-4 bg-white gap-2 rounded-xl flex flex-col flex-wrap'>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+            <h2 className="text-base sm:text-lg md:text-xl font-bold text-[#0f1111] inline">
+              Hello World
             </h2>
 
             <a
               href="/"
-              className="text-[#007185] text-xs sm:text-sm hover:text-[#c45500]"
+              className="text-[#007185] text-xs sm:text-sm hover:text-[#c45500] hover:underline inline "
             >
               See all deals
             </a>
           </div>
 
-          <div
-            className="
-        flex
-        gap-2
-        sm:gap-3
-        overflow-x-auto
-        pb-2
-        scrollbar-hide
-      "
-          >
-            {products.map((product) => (
-              <div
-                key={product.id}
-                className="
-            shrink-0
-
-            w-35
-            sm:w-40
-            md:w-45
-            lg:w-50
-            xl:w-55
-          "
-              >
-                <ProductCard
-                  {...product}
-                  onAddToCart={handleAddToCart}
+          <div className="flex gap-4 flex-row md:flex-nowrap w-full overflow-y-hidden overflow-x-scroll">
+           {carouselData.map((item) => (
+                <ProductCarouselCard
+                  item={item}
                 />
-              </div>
-            ))}
+              ))}
+
           </div>
-        </div>
-      </div>
-
-      <AdBanner />
+        </section>
 
 
 
-      <div className="bg-[#e3e6e6] px-2 sm:px-3 md:px-4 lg:px-5">
-        <div className="bg-white p-3 sm:p-4 md:p-5 rounded">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-3">
-            <h2 className="text-sm sm:text-base md:text-lg font-bold">
-              Deals inspired by your browsing history
-            </h2>
-
-            <a
-              href="/"
-              className="text-[#007185] text-xs sm:text-sm hover:text-[#c45500]"
+        <section className='my-5 p-4 bg-white rounded-xl flex gap-4 sm:flex-row flex-nowrap w-full overflow-y-hidden overflow-x-scroll'>
+          {products.map((product) => (
+            <div
+              key={product.id}
+              className="shrink-0 w-35 sm:w-40 md:w-45 lg:w-50 xl:w-55"
             >
-              See all deals
-            </a>
-          </div>
+              <ProductCard
+                {...product}
+              // onAddToCart={handleAddToCart}
+              />
+            </div>
+          ))}
+        </section>
+      </main>
 
-          <div
-            className="
-        flex
-        gap-2
-        sm:gap-3
-        overflow-x-auto
-        pb-2
-        scrollbar-hide
-      "
-          >
-            {products.map((product) => (
-              <div
-                key={product.id}
-                className="
-            shrink-0
-
-            w-35
-            sm:w-40
-            md:w-45
-            lg:w-50
-            xl:w-55
-          "
-              >
-                <ProductCard
-                  {...product}
-                  onAddToCart={handleAddToCart}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       <Footer />
     </>
