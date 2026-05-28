@@ -38,10 +38,10 @@ function ProductCard({
           loading="lazy"
           className="
             w-full
-            h-[110px]
-            sm:h-[130px]
-            md:h-[150px]
-            lg:h-[170px]
+            h-27.5
+            sm:h-32.5
+            md:h-37.5
+            lg:h-42.5
             object-cover
           "
         />
@@ -76,8 +76,8 @@ function ProductCard({
             font-medium
             text-[#0f1111]
             line-clamp-2
-            min-h-[32px]
-            sm:min-h-[38px]
+            min-h-8
+            sm:min-h-9.5
           "
         >
           {title}

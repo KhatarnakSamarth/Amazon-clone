@@ -30,7 +30,7 @@ function AdBanner() {
             key={index}
             className={`
               z-1
-              bg-gradient-to-r ${banner.gradient}
+              bg-linear-to-r ${banner.gradient}
               rounded-xl
               p-4 sm:p-5
               text-white
@@ -46,7 +46,7 @@ function AdBanner() {
               md:flex-col
               flex-col
               justify-between
-              min-h-[150px]
+              min-h-37.5
               md:flex-nowrap
             `}
           >

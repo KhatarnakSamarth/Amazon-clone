@@ -5,21 +5,21 @@ function ProductCarouselCard({ item }) {
     <div
       className="
         shrink-0
-        w-[130px]
-        sm:w-[150px]
-        md:w-[170px]
-        lg:w-[190px]
-        xl:w-[210px]
+        w-32.5
+        sm:w-37.5
+        md:w-42.5
+        lg:w-47.5
+        xl:w-52.5
       "
     >
       {/* Image */}
       <div
         className="
           bg-[#f7f7f7]
-          h-[120px]
-          sm:h-[140px]
-          md:h-[170px]
-          lg:h-[190px]
+          h-30
+          sm:h-35
+          md:h-42.5
+          lg:h-47.5
           flex
           items-center
           justify-center
