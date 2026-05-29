@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import HeroSlider from './components/HeroSlider';
 import ProductCard from './components/ProductCard';
+import Footer from './components/Footer';
 
 const App = () => {
   const handleAddToCart = (product) => {
@@ -139,6 +140,8 @@ const App = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   )
 }
