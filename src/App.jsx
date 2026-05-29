@@ -11,7 +11,7 @@ import ProductCarouselCard from "./components/ProductCarouselCard";
 const products = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f37?w=300&q=80",
+    image: "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?q=80",
     title: "Apple AirPods Pro (2nd Gen)",
     price: 21999,
     originalPrice: 26999,
@@ -130,7 +130,7 @@ const App = () => {
   return (
     <>
         <Navbar cartCount={cartCount} />
-      <main className='px-4 md:px-6 lg:px-8 relative bg-gray-200'>
+      <main className='px-4 md:px-6 lg:px-8 relative bg-gray-200 overflow-x-hidden'>
         <Hero />
 
         <section className='flex gap-4 flex-col sm:flex-row flex-wrap md:flex-nowrap w-full'>
