@@ -31,8 +31,7 @@ const secondaryNav = [
   "Home & Kitchen",
 ];
 
-export default function Navbar() {
-  const [cartCount] = useState(0);
+export default function Navbar({ cartCount }) {
 
   return (
     <header className="sticky top-0 z-50 shadow-lg">
@@ -188,7 +187,9 @@ export default function Navbar() {
               <div className="relative flex items-center">
                 <img src={cartIcon} alt="Cart" />
 
-                <span className="absolute left-4.5 -top-0.5 text-xl font-bold text-[#FF9900]">
+                <span className={`absolute top-1 text-md font-bold text-[#FF9900] ${
+    cartCount > 9 ? 'left-3.75' : 'left-4.75'
+  }`}>
                   {cartCount}
                 </span>
               </div>
@@ -212,17 +213,16 @@ export default function Navbar() {
             <a
               key={item}
               href="#"
-              className={`whitespace-nowrap border border-transparent px-3 py-2 text-sm text-white hover:border-white ${
-                item === "Prime"
-                  ? "font-bold text-sky-400"
-                  : ""
-              }`}
+              className={`whitespace-nowrap border border-transparent px-3 py-2 text-sm text-white hover:border-white ${item === "Prime"
+                ? "font-bold text-sky-400"
+                : ""
+                }`}
             >
               {item}
             </a>
           ))}
         </div>
       </nav>
-    </header>
+    </header >
   );
 }

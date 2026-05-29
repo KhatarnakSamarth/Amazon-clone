@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProductCarouselCard({ item }) {
+function ProductCarouselCard({ item , onAddToCart} ) {
   return (
     <div
       className="
@@ -77,6 +77,7 @@ function ProductCarouselCard({ item }) {
             text-[#0f1111]
             line-clamp-2
           "
+          onClick={onAddToCart}
         >
           {item.title}
         </span>

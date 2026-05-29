@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react';
 import Navbar from './components/Navbar'
 import Hero from './components/Hero';
 import ProductCard from './components/ProductCard';
@@ -121,9 +122,14 @@ const carouselData = [
 
 
 const App = () => {
+  const [cartCount, setCartCount] = useState(0);
+
+  const handleAddToCart = () => {
+    setCartCount((prev) => prev + 1);
+  };
   return (
     <>
-      <Navbar />
+        <Navbar cartCount={cartCount} />
       <main className='px-4 md:px-6 lg:px-8 relative bg-gray-200'>
         <Hero />
 
@@ -144,6 +150,7 @@ const App = () => {
             >
               <ProductCard
                 {...product}
+                onAddToCart={handleAddToCart}
               // onAddToCart={handleAddToCart}
               />
             </div>
@@ -175,6 +182,7 @@ const App = () => {
             {carouselData.map((item) => (
               <ProductCarouselCard
                 item={item}
+                onAddToCart={handleAddToCart}
               />
             ))}
 
@@ -191,6 +199,7 @@ const App = () => {
             >
               <ProductCard
                 {...product}
+                onAddToCart={handleAddToCart}
               // onAddToCart={handleAddToCart}
               />
             </div>
