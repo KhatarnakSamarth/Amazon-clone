@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import HeroSlider from './components/HeroSlider';
 import ProductCard from './components/ProductCard';
 import Footer from './components/Footer';
+import AdBanner from './components/AdBanner';
 
 const App = () => {
   const handleAddToCart = (product) => {
@@ -92,8 +93,62 @@ const App = () => {
       <Navbar />
       <HeroSlider />
 
+      
+
 
       <div className="bg-[#e3e6e6] px-2 sm:px-3 md:px-4 lg:px-5 z-2 relative md:-mt-20">
+        <div className="bg-white p-3 sm:p-4 md:p-5 rounded">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-3">
+            <h2 className="text-sm sm:text-base md:text-lg font-bold">
+              Deals inspired by your browsing history
+            </h2>
+
+            <a
+              href="/"
+              className="text-[#007185] text-xs sm:text-sm hover:text-[#c45500]"
+            >
+              See all deals
+            </a>
+          </div>
+
+          <div
+            className="
+        flex
+        gap-2
+        sm:gap-3
+        overflow-x-auto
+        pb-2
+        scrollbar-hide
+      "
+          >
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="
+            shrink-0
+
+            w-35
+            sm:w-40
+            md:w-45
+            lg:w-50
+            xl:w-55
+          "
+              >
+                <ProductCard
+                  {...product}
+                  onAddToCart={handleAddToCart}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <AdBanner />
+
+
+
+      <div className="bg-[#e3e6e6] px-2 sm:px-3 md:px-4 lg:px-5">
         <div className="bg-white p-3 sm:p-4 md:p-5 rounded">
           <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mb-3">
             <h2 className="text-sm sm:text-base md:text-lg font-bold">
