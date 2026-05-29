@@ -1,4 +1,3 @@
-import { useState } from "react";
 import logo from "../assets/logo.png";
 import locpinIcon from "../assets/loc-pin.png";
 import searchIcon from "../assets/search.png";
@@ -58,14 +57,20 @@ export default function Navbar({ cartCount }) {
               </div>
 
               {/* Cart */}
-              <div className="relative flex items-center">
-                <img src={cartIcon} alt="Cart" className="w-9" />
 
-                <span className="absolute left-3 top-0 text-lg font-bold text-[#FF9900]">
-                  {cartCount}
+              <div className="relative flex cursor-pointer items-center rounded border border-transparent px-2 py-1 hover:border-white">
+                <div className="relative flex items-center">
+                  <img src={cartIcon} alt="Cart" />
+
+                  <span className={`absolute top-1 text-md font-bold text-[#FF9900] ${cartCount > 9 ? 'left-3.75' : 'left-4.75'
+                    }`}>
+                    {cartCount}
+                  </span>
+                </div>
+
+                <span className="-mb-1 -ml-1 text-sm font-bold">
+                  Cart
                 </span>
-
-                <span className="ml-1 text-sm font-bold">Cart</span>
               </div>
             </div>
           </div>
@@ -90,7 +95,7 @@ export default function Navbar({ cartCount }) {
           </div>
 
           {/* Location */}
-          <div className="flex items-center gap-1 bg-[#232f3e] px-3 py-2 text-sm">
+          <div className="flex items-center gap-1 bg-[#232f3e] px-3 py-2 sm:text-sm text-sx">
             <img src={locpinIcon} alt="Location" className="w-4" />
             <span>Delivering to Delhi 110001 - Update location</span>
           </div>
@@ -187,9 +192,8 @@ export default function Navbar({ cartCount }) {
               <div className="relative flex items-center">
                 <img src={cartIcon} alt="Cart" />
 
-                <span className={`absolute top-1 text-md font-bold text-[#FF9900] ${
-    cartCount > 9 ? 'left-3.75' : 'left-4.75'
-  }`}>
+                <span className={`absolute top-1 text-md font-bold text-[#FF9900] ${cartCount > 9 ? 'left-3.75' : 'left-4.75'
+                  }`}>
                   {cartCount}
                 </span>
               </div>

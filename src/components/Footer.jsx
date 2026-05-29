@@ -52,17 +52,10 @@ const Footer = () => {
                 </ul>
             </div>
 
-            <div className="w-full h-20 bg-amazon_light text-gray-300 flex items-center justify-center gap-4 bg-[#232f3e]">
+            <div className="w-full h-20 bg-amazon_light text-gray-300 flex-wrap flex items-center justify-center gap-4 bg-[#232f3e]">
                 <img className="w-24" src={logo} alt="logo" />
-                <p className="text-sm -mt-4">
-                    All rights reserved{" "}
-                    <a
-                        className="hover:text-white hover:underline decoration-1 cursor-pointer duration-300"
-                        href="https://reactbd.com"
-                        target="_blank"
-                    >
-                        @reactbd.com
-                    </a>
+                <p className="text-[0.6rem] sm:text-sm -mt-4 text-wrap text-center hover:text-white hover:underline decoration-1 cursor-pointer duration-300">
+                    All rights reserved | Amazon.com, Inc. or its affiliates          
                 </p>
             </div>
 
